@@ -109,7 +109,7 @@ define Device/gs_oolite-v1
   IMAGE_SIZE := 16000k
   SUPPORTED_DEVICES += oolite-v1
 endef
-TARGET_DEVICES += oolite-v1
+TARGET_DEVICES += gs_oolite-v1
 
 define Device/adtran_bsap1880
   SOC := ar7161
