@@ -101,16 +101,6 @@ define Device/8dev_carambola2
 endef
 TARGET_DEVICES += 8dev_carambola2
 
-define Device/gs_oolite-v1
-  SOC := ar9331
-  DEVICE_VENDOR := GainStrong
-  DEVICE_MODEL := Oolite-V1
-  DEVICE_PACKAGES := kmod-usb2 kmod-usb-chipidea2
-  IMAGE_SIZE := 16000k
-  SUPPORTED_DEVICES += oolite-v1
-endef
-TARGET_DEVICES += gs_oolite-v1
-
 define Device/adtran_bsap1880
   SOC := ar7161
   DEVICE_VENDOR := Adtran/Bluesocket
@@ -662,6 +652,16 @@ define Device/glinet_gl-x750
   IMAGE_SIZE := 16000k
 endef
 TARGET_DEVICES += glinet_gl-x750
+
+define Device/gs_oolite-v1
+  SOC := ar9331
+  DEVICE_VENDOR := GainStrong
+  DEVICE_MODEL := Oolite-V1
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-chipidea2
+  IMAGE_SIZE := 16000k
+  SUPPORTED_DEVICES += oolite-v1
+endef
+TARGET_DEVICES += gs_oolite-v1
 
 define Device/iodata_etg3-r
   SOC := ar9342
