@@ -14,36 +14,6 @@
 		serial0 = &uart;
 		label-mac-device = &wmac;
 	};
-
-	leds {
-		compatible = "gpio-leds";
-
-		wlan {
-			label = "carambola2:green:wlan";
-			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "phy0tpt";
-		};
-
-		eth0 {
-			label = "carambola2:orange:eth0";
-			gpios = <&gpio 13 GPIO_ACTIVE_HIGH>;
-		};
-
-		eth1 {
-			label = "carambola2:orange:eth1";
-			gpios = <&gpio 14 GPIO_ACTIVE_HIGH>;
-		};
-	};
-
-	keys {
-		compatible = "gpio-keys";
-
-		wps {
-			label = "wps";
-			linux,code = <KEY_WPS_BUTTON>;
-			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-		};
-	};
 };
 
 &ref {
@@ -81,21 +51,21 @@
 			#address-cells = <1>;
 			#size-cells = <1>;
 
-			uboot:	partition@0 {
+			uboot: partition@0 {
+				reg = <0x0 0x20000>;
 				label = "u-boot";
-				reg = <0x000000 0x020000>;
 				read-only;
 			};
 
 			partition@20000 {
-				compatible = "denx,uimage";
-				label = "firmware";
+				compatible = "tplink,firmware";
 				reg = <0x20000 0xfd0000>;
+				label = "firmware";
 			};
 
 			art: partition@ff0000 {
+				reg = <0xff0000 0x10000>;
 				label = "art";
-				reg = <0xff0000 0x010000>;
 				read-only;
 			};
 		};
