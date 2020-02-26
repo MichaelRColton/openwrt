@@ -664,7 +664,7 @@ define Device/gs_oolite-v1
   IMAGES := sysupgrade.bin
   SUPPORTED_DEVICES += oolite-v1
 endef
-TARGET_DEVICES += gs_oolite-v16
+TARGET_DEVICES += gs_oolite-v1
 
 define Device/iodata_etg3-r
   SOC := ar9342
