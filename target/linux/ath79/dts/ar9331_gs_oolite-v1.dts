@@ -99,7 +99,7 @@
 &spi {
 	status = "okay";
 
-	cs-gpios = <0>, <&gpio 21 GPIO_ACTIVE_HIGH>;
+	cs-gpios = <0>, <&gpio 7 GPIO_ACTIVE_HIGH>;
 	num-cs = <2>;
 
 	flash0: flash@0 {
