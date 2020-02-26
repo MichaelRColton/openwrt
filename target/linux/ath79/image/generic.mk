@@ -658,13 +658,13 @@ define Device/gs_oolite-v1
   SOC := ar9331
   DEVICE_VENDOR := GainStrong
   DEVICE_MODEL := Oolite-V1
-  DEVICE_PACKAGES := kmod-usb2 kmod-usb-chipidea2
-  IMAGE_SIZE := 16000k
+  DEVICE_PACKAGES := kmod-usb2
+  IMAGE_SIZE := 16192k
+  TPLINK_HWID := 0x08000001
+  IMAGES := sysupgrade.bin
   SUPPORTED_DEVICES += oolite-v1
-  IMAGE/sysupgrade.bin := $$(IMAGE/default) | append-metadata | \
-	check-size $$$$(IMAGE_SIZE)
 endef
-TARGET_DEVICES += gs_oolite-v1
+TARGET_DEVICES += gs_oolite-v16
 
 define Device/iodata_etg3-r
   SOC := ar9342
