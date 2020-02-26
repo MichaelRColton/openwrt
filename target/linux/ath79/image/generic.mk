@@ -654,12 +654,15 @@ endef
 TARGET_DEVICES += glinet_gl-x750
 
 define Device/gs_oolite-v1
+  $(Device/tplink-16mlzma)
   SOC := ar9331
   DEVICE_VENDOR := GainStrong
   DEVICE_MODEL := Oolite-V1
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-chipidea2
   IMAGE_SIZE := 16000k
   SUPPORTED_DEVICES += oolite-v1
+  IMAGE/sysupgrade.bin := $$(IMAGE/default) | append-metadata | \
+	check-size $$$$(IMAGE_SIZE)
 endef
 TARGET_DEVICES += gs_oolite-v1
 
